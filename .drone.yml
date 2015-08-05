@@ -10,11 +10,14 @@ script:
   - ln -s /cache/node_modules node_modules
   # install dependencies
   - npm install
+  # Install chromedriver
+  - curl -Lo chromedriver.zip http://chromedriver.storage.googleapis.com/2.16/chromedriver_linux64.zip
+  - unzip chromedriver.zip
+  - export PATH=.:$PATH
   # ensure the build works
   # this will also run gulp test
   - gulp all
-  # run tests explicitly
-  - gulp test
+  # run memory tests explicitly for now
   - node test/memory/test.js
 deploy:
   bash:
