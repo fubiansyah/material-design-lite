@@ -4,7 +4,7 @@ var drool = require('drool');
 var path = require('path');
 var humanize = require('humanize');
 var assert = require('assert');
-var webdriver = require('../../node_modules/drool/node_modules/selenium-webdriver');
+var webdriver = drool.webdriver;
 var driver = drool.start();
 
 drool.flow({
